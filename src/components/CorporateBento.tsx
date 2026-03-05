@@ -18,14 +18,16 @@ const containerVariants = {
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
-    }
+        transition: {
+            duration: 0.8,
+            ease: [0.4, 0, 0.2, 1] as any, // The 'as any' tells the computer to stop being so strict
+        },
+    },
 };
-
 export default function CorporateBento() {
     return (
         <section className="py-32 px-8 bg-white overflow-hidden">
