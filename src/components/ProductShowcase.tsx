@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { Cog, Anchor, Toolbox, Activity, ShieldCheck, ArrowRight, Layers, Drill, Search, Settings } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Cog, Anchor, Toolbox, ArrowRight, ShieldCheck, Globe, Database } from 'lucide-react';
 import Image from 'next/image';
+import Spotlight from './Spotlight';
 
 const allProducts = [
     {
@@ -38,59 +39,64 @@ export default function ProductShowcase({ mode }: { mode: 'NITRO' | 'WALLET' }) 
 }
 
 /* 
-  NITRO MODE: BRUTALIST POWER PLAY 
-  - Massive Viewport Width Typography (12vw)
-  - LayoutID pops
-  - High Contrast Red/White
+  NITRO VIEW: Cinematic Industrial Brutalism
+  - Fluid Full-Width Display Scales
+  - High Contrast Red/Carbon Palette
 */
 function NitroView() {
     return (
-        <section className="bg-white py-32 overflow-hidden min-h-screen">
-            <div className="max-w-[1440px] mx-auto px-12">
-                <div className="mb-32">
+        <section className="bg-white py-[var(--space-24)] overflow-hidden min-h-screen">
+            <div className="max-w-[1728px] mx-auto px-[var(--space-8)] lg:px-[var(--space-20)]">
+
+                <div className="mb-[var(--space-24)]">
                     <motion.h2
-                        layoutId="nitro-title"
-                        className="text-[12vw] font-black uppercase text-[#111827] leading-[0.8] tracking-tighter"
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        className="text-display-2xl font-display font-[800] text-[var(--carbon-black)] leading-[0.8] tracking-tighter uppercase"
                     >
-                        SIGMA<br />
-                        <span className="text-[#EE3124]">OILFIELD</span>
+                        OFFSHORE<br />
+                        <span className="text-[var(--signal-red-500)]">ASSET HUB</span>
                     </motion.h2>
-                    <div className="flex items-center space-x-6 mt-12">
-                        <div className="w-24 h-4 bg-[#EE3124]" />
-                        <span className="text-2xl font-black uppercase tracking-widest text-slate-500">Power Infrastructure</span>
+                    <div className="flex items-center space-x-[var(--space-6)] mt-[var(--space-10)]">
+                        <div className="w-[var(--space-24)] h-5 bg-[var(--signal-red-500)]" />
+                        <span className="text-h4 font-[900] uppercase tracking-widest text-[var(--neutral-400)] italic">Powering Global Energy Corridors</span>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-3)]">
                     {allProducts.map((product, i) => (
                         <motion.div
                             key={product.id}
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: i * 0.1, duration: 0.5, ease: "circOut" }}
-                            className="group relative h-[600px] bg-slate-900 border-2 border-slate-900 hover:border-[#EE3124] transition-all overflow-hidden"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.1, duration: 0.8 }}
+                            className="group relative h-[700px] bg-[var(--carbon-900)] border border-[var(--neutral-200)] hover:border-[var(--signal-red-500)] transition-all duration-500 overflow-hidden product-card"
                         >
                             <Image
                                 src={product.image}
                                 alt={product.title}
                                 fill
-                                className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 h-full"
+                                className="object-cover opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-[1.5s]"
                             />
-                            <div className="absolute inset-0 z-10 p-12 flex flex-col justify-between">
-                                <div className="text-white">
-                                    <span className="text-[#EE3124] text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">LEVEL 0{i + 1} / {product.category}</span>
-                                    <h3 className="text-6xl font-black uppercase tracking-tighter leading-none">{product.title}</h3>
+
+                            <div className="absolute inset-0 z-10 p-[var(--space-12)] flex flex-col justify-between">
+                                <div className="space-y-[var(--space-4)]">
+                                    <span className="text-tech-label text-[var(--signal-red-500)] block">REGISTRY {i + 1} / 0{allProducts.length}</span>
+                                    <h3 className="text-display-md font-display font-[800] text-white leading-tight uppercase tracking-tighter">{product.title}</h3>
                                 </div>
 
-                                <div className="flex flex-wrap gap-4 opacity-0 group-hover:opacity-100 transition-opacity translate-y-8 group-hover:translate-y-0 duration-500">
-                                    {product.hud.map(h => (
-                                        <div key={h.label} className="bg-[#EE3124] text-white px-6 py-4 rounded-sm">
-                                            <p className="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60">{h.label}</p>
-                                            <p className="text-2xl font-black font-mono">{h.value}</p>
-                                        </div>
-                                    ))}
-                                    <button className="bg-white text-black px-10 py-4 font-black uppercase text-xs tracking-widest">
-                                        Request Spec
+                                <div className="space-y-[var(--space-10)] translate-y-[var(--space-12)] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
+                                    <div className="grid grid-cols-2 gap-[var(--space-4)]">
+                                        {product.hud.map(h => (
+                                            <div key={h.label} className="bg-white/5 backdrop-blur-md border border-white/10 p-[var(--space-4)] rounded-lg">
+                                                <p className="text-tech-label text-white/30 mb-1">{h.label}</p>
+                                                <p className="text-h4 font-mono font-bold text-white">{h.value}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <button className="w-full py-[var(--space-5)] bg-[var(--signal-red-500)] text-white font-[900] uppercase tracking-[0.2em] text-[11px] rounded-lg shadow-glow-red hover:bg-white hover:text-[var(--carbon-black)] transition-all spring-scale">
+                                        Secure Technical Sheet
                                     </button>
                                 </div>
                             </div>
@@ -103,26 +109,28 @@ function NitroView() {
 }
 
 /* 
-  WALLET MODE: LUXURY STACK 
-  - Sticky Stacking (sticky top-20)
-  - 3D Layering/Shadows
+  WALLET VIEW: Luxury Kinetic Stacking
+  - Deep Carbon Backgrounds
+  - Crystal Refraction Overlays
 */
 function WalletView() {
     return (
-        <section className="bg-[#111827] py-32 px-12 min-h-[300vh]">
-            <div className="max-w-7xl mx-auto">
-                <div className="mb-32 sticky top-24 z-50">
-                    <div className="flex items-center space-x-3 mb-6">
-                        <div className="w-12 h-1 bg-[#0099CC]" />
-                        <span className="text-xs font-black uppercase tracking-[0.4em] text-[#0099CC]">Strategic Selection</span>
+        <section className="bg-[var(--carbon-black)] py-[var(--space-24)] min-h-[400vh] relative overflow-hidden">
+            <Spotlight className="absolute inset-0 z-0 h-full w-full" />
+            <div className="max-w-7xl mx-auto px-[var(--space-8)] lg:px-[var(--space-20)] relative z-10">
+
+                <div className="mb-[var(--space-32)] sticky top-[var(--space-24)] z-50">
+                    <div className="flex items-center space-x-[var(--space-4)] mb-[var(--space-6)]">
+                        <div className="w-[var(--space-10)] h-[2px] bg-[var(--tech-cyan-500)]" />
+                        <span className="text-tech-label text-[var(--tech-cyan-500)]">Asset Collective</span>
                     </div>
-                    <h2 className="text-6xl font-black text-white uppercase tracking-tighter font-montserrat">
-                        Certified <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0099CC] to-white/40 italic">Industrial Assets</span>
+                    <h2 className="text-display-lg font-display font-[800] text-white uppercase tracking-tighter leading-[0.9]">
+                        Industrial <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--tech-cyan-500)] to-white/40 italic">Asset Registry</span>
                     </h2>
                 </div>
 
-                <div className="space-y-[40vh]">
+                <div className="relative space-y-[var(--space-48)] mt-[var(--space-24)]">
                     {allProducts.map((product, i) => (
                         <WalletCard key={product.id} product={product} index={i} total={allProducts.length} />
                     ))}
@@ -135,44 +143,48 @@ function WalletView() {
 function WalletCard({ product, index, total }: { product: any, index: number, total: number }) {
     return (
         <motion.div
-            style={{ top: 120 + (index * 40) }}
-            className="sticky w-full h-[600px] rounded-[3rem] overflow-hidden bg-slate-900 border border-white/10 shadow-[0_-50px_100px_rgba(0,0,0,0.5)] transform-gpu"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="sticky top-[200px] w-full h-[650px] rounded-[var(--radius-hud)] overflow-hidden bg-[var(--carbon-900)] border border-white/5 shadow-2xl"
         >
-            <div className="absolute inset-0 z-0 scale-105">
+            <div className="absolute inset-0 z-0">
                 <Image
                     src={product.image}
                     alt={product.title}
                     fill
-                    className="object-cover opacity-40 hover:scale-110 transition-transform duration-[2000ms]"
+                    className="object-cover opacity-30 hover:scale-105 transition-transform duration-[3s]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--carbon-black)] via-transparent to-transparent" />
+                {/* Blueprint Decor Overlay */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none" />
             </div>
 
-            <div className="relative z-10 p-16 h-full flex flex-col justify-between">
+            <div className="relative z-10 p-[var(--space-12)] lg:p-[var(--space-16)] h-full flex flex-col justify-between">
                 <div className="flex justify-between items-start">
-                    <div>
-                        <div className="text-[10px] font-black text-[#0099CC] uppercase tracking-[0.4em] mb-4">ASSET {index + 1} / {total}</div>
-                        <h3 className="text-5xl font-black text-white uppercase tracking-tighter leading-tight font-montserrat max-w-xl">
+                    <div className="max-w-2xl">
+                        <span className="text-tech-label text-[var(--tech-cyan-500)] block mb-[var(--space-4)]">DEPLOYMENT CATEGORY: {product.category}</span>
+                        <h3 className="text-display-md font-display font-[800] text-white uppercase tracking-tighter leading-tight">
                             {product.title}
                         </h3>
                     </div>
-                    <div className="w-16 h-16 bg-white/5 backdrop-blur-md rounded-2.5xl flex items-center justify-center border border-white/10">
-                        <product.icon size={28} className="text-[#0099CC]" />
+                    <div className="w-16 h-16 bg-white/5 backdrop-blur-2xl rounded-2xl flex items-center justify-center border border-white/10 text-[var(--tech-cyan-500)] shadow-lg">
+                        <product.icon size={32} />
                     </div>
                 </div>
 
-                <div className="flex items-end justify-between">
-                    <div className="grid grid-cols-3 gap-12 p-10 bg-black/40 backdrop-blur-2xl rounded-[2.5rem] border border-white/5 w-fit">
+                <div className="flex flex-col lg:flex-row items-end lg:items-center justify-between gap-[var(--space-8)]">
+                    <div className="flex flex-wrap gap-[var(--space-[space-12)] bg-black/40 backdrop-blur-2xl px-[var(--space-10)] py-[var(--space-8)] rounded-3xl border border-white/5">
                         {product.hud.map((h: any) => (
-                            <div key={h.label}>
-                                <p className="text-[9px] font-black uppercase tracking-widest text-[#0099CC] mb-1 italic font-mono">{h.label}</p>
-                                <p className="text-2xl font-bold text-white font-mono">{h.value}</p>
+                            <div key={h.label} className="min-w-[120px]">
+                                <p className="text-tech-label text-white/30 mb-1">{h.label}</p>
+                                <p className="text-h3 font-mono font-bold text-white">{h.value}</p>
                             </div>
                         ))}
                     </div>
 
-                    <button className="px-12 py-6 bg-[#0099CC] text-white font-black uppercase text-xs tracking-widest rounded-2xl hover:bg-white hover:text-black transition-all shadow-xl shadow-[#0099CC]/20">
-                        Secure Delivery
+                    <button className="px-[var(--space-12)] py-[var(--space-6)] bg-[var(--tech-cyan-500)] text-[var(--carbon-black)] font-[900] uppercase tracking-[0.2em] text-[11px] rounded-2xl hover:bg-white transition-all shadow-xl shadow-[var(--tech-cyan-500)]/20 spring-scale">
+                        Initiate Procurement Link
                     </button>
                 </div>
             </div>
