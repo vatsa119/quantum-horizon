@@ -1,104 +1,196 @@
 "use client";
 
-import React, { useRef } from 'react';
-import Image from 'next/image';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import MagneticButton from './MagneticButton';
+import Spotlight from './Spotlight';
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollY } = useScroll();
+    const [videoFailed, setVideoFailed] = useState(false);
 
-    // Scrollytelling range
-    const scale = useTransform(scrollY, [0, 500], [1, 1.15]);
-    const yParallax = useTransform(scrollY, [0, 500], [0, 80]);
-    const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
-    const textY = useTransform(scrollY, [0, 300], [0, -50]);
+    const textOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+    const textY = useTransform(scrollY, [0, 500], [0, 100]);
+    const rigScale = useTransform(scrollY, [0, 1000], [1, 1.2]);
+    const rigOpacity = useTransform(scrollY, [0, 800], [0.4, 0.1]);
 
     return (
-        <section
-            ref={containerRef}
-            // Executive Isolation: padding-top: 140px to ensure the brand name and the navbar have a "Golden Ratio" of white space between them.
-            className="relative min-h-[95vh] w-full flex items-center overflow-hidden bg-[#111827] z-10 pt-[140px]"
-        >
-            {/* Whisk-Style Rig Image Layer */}
-            <motion.div
-                style={{ scale, y: yParallax }}
-                className="absolute inset-0 z-0"
-            >
-                <Image
-                    src="/Hero-rig.jpg"
-                    alt="Sigma Oilfield Rig"
-                    fill
-                    className="object-cover object-center"
-                    priority
-                    quality={100}
-                />
-                {/* Cinematic Overlays */}
-                <div className="absolute inset-0 z-10 bg-black/40" />
-            </motion.div>
+        <Spotlight>
+            <section ref={containerRef} className="relative min-h-screen w-full flex items-center overflow-hidden bg-[var(--carbon-black)]">
+                {/* BACKGROUND RIG LAYER - Cinematic Depth */}
+                <motion.div
+                    style={{ scale: rigScale, opacity: rigOpacity }}
+                    className="absolute inset-0 z-0 pointer-events-none"
+                >
+                    <div className="absolute inset-0 bg-gradient-to-b from-[var(--carbon-black)] via-transparent to-[var(--carbon-black)] z-10" />
+                    <Image
+                        src="/offshore-rig.jpg"
+                        alt="Offshore Infrastructure"
+                        fill
+                        className="object-cover grayscale contrast-125 brightness-50"
+                        priority
+                        sizes="100vw"
+                    />
+                </motion.div>
 
-            {/* Hero Content Layer */}
-            <motion.div
-                style={{ opacity: textOpacity, y: textY }}
-                className="relative z-20 w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-24 py-20"
-            >
-                <div className="max-w-full lg:max-w-7xl font-montserrat">
-                    {/* Executive Branding Header */}
-                    <motion.h1
-                        initial={{ opacity: 0, y: 40, scale: 0.98 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-5xl md:text-7xl lg:text-[7vw] font-black leading-[1] text-white mb-10 tracking-tighter uppercase"
-                    >
-                        <span className="block mb-2">SIGMA OILFIELD</span>
-                        <span className="block mb-2">& INDUSTRIAL SUPPLY</span>
-                        <span className="text-[#EE3124]">DMCC</span>
-                    </motion.h1>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                        className="flex items-center gap-4 mb-6"
-                    >
-                        <div className="w-10 h-[2px] bg-[#EE3124]" />
-                        <h2 className="text-sm md:text-base lg:text-lg font-extrabold text-white/80 uppercase tracking-[0.25em] font-montserrat">
-                            Global Infrastructure Hub
-                        </h2>
-                    </motion.div>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.7, duration: 1, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                        className="text-base md:text-lg lg:text-xl text-gray-400 mb-12 max-w-2xl leading-relaxed font-medium font-montserrat"
-                    >
-                        Engineering 100% operational stability across global energy corridors with certified high-precision infrastructure.
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 1, duration: 0.5 }}
-                    >
-                        <MagneticButton
-                            className="inline-flex items-center px-16 py-7 bg-[#EE3124] text-white font-black rounded-lg hover:bg-white hover:text-[#111827] transition-all shadow-3xl shadow-[#EE3124]/40 uppercase tracking-[0.3em] text-xs"
-                            onClick={() => window.location.href = '#contact'}
-                        >
-                            Get Started
-                            <svg className="w-6 h-6 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </MagneticButton>
-                    </motion.div>
+                {/* RADAR OVERLAY - Technical Pattern */}
+                <div className="absolute inset-0 z-1 opacity-20 pointer-events-none">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--carbon-600)_1px,transparent_1px)] bg-[size:32px_32px]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--carbon-700)_1px,transparent_1px),linear-gradient(to_bottom,var(--carbon-700)_1px,transparent_1px)] bg-[size:128px_128px] opacity-10" />
                 </div>
-            </motion.div>
 
-            {/* Surface Transition Mask */}
-            <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#111827] to-transparent z-15" />
-        </section>
+                {/* HERO CONTENT ENGINE */}
+                <motion.div
+                    style={{ opacity: textOpacity, y: textY }}
+                    className="relative z-20 w-full max-w-7xl mx-auto px-[var(--space-8)] sm:px-[var(--space-12)] lg:px-[var(--space-20)] py-[var(--space-20)]"
+                >
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-[var(--space-12)] lg:gap-[var(--space-24)] items-center">
+
+                        {/* LEFT COLUMN: BRAND HUB */}
+                        <div className="col-span-12 lg:col-span-8 relative z-20">
+                            <div className="max-w-[800px]">
+                                {/* OVERLINE TELEMETRY */}
+                                <motion.div
+                                    initial={{ opacity: 0, x: -30 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 1, ease: "easeOut" }}
+                                    className="flex items-center gap-[var(--space-4)] mb-[var(--space-8)]"
+                                >
+                                    <div className="w-[var(--space-12)] h-[2px] bg-[var(--signal-red-500)]" />
+                                    <span className="text-tech-label text-white/80 tracking-[0.2em]">
+                                        Global Infrastructure Protocol: Active
+                                    </span>
+                                </motion.div>
+
+                                {/* EXECUTIVE HEADLINE - VIDEO MASKED */}
+                                <motion.h1
+                                    initial={{ opacity: 0, y: 60 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                                    className="text-display-2xl font-display font-[800] leading-[0.95] text-white mb-[var(--space-12)] uppercase tracking-[-0.04em]"
+                                >
+                                    <div className="hero-text-mask-container mb-[var(--space-2)] rounded-2xl overflow-hidden">
+                                        {!videoFailed && (
+                                            <video
+                                                autoPlay
+                                                muted
+                                                loop
+                                                playsInline
+                                                className="hero-bg-video"
+                                                onError={() => setVideoFailed(true)}
+                                            >
+                                                <source src="/videos/industrial-loop.mp4" type="video/mp4" />
+                                            </video>
+                                        )}
+                                        <span className={`block hero-masked-text ${videoFailed ? 'hero-headline-masked' : ''}`}>
+                                            SIGMA
+                                        </span>
+                                    </div>
+                                    <span className="block mb-[var(--space-2)]">OILFIELD</span>
+                                    <span className="text-[var(--signal-red-500)] italic">& INDUSTRIAL</span>
+                                </motion.h1>
+
+                                {/* SUB-ORCHESTRATION */}
+                                <motion.p
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5, duration: 1 }}
+                                    className="text-body-lg lg:text-[22px] text-white/50 mb-[var(--space-16)] max-w-2xl leading-relaxed font-medium"
+                                >
+                                    Engineering absolute operational stability across the global energy corridor.
+                                    Precision hardware for high-stakes infrastructure.
+                                </motion.p>
+
+                                {/* INTERACTIVE VECTOR */}
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 0.8, duration: 0.8 }}
+                                    className="flex flex-wrap gap-[var(--space-6)]"
+                                >
+                                    <MagneticButton
+                                        className="inline-flex items-center px-[var(--space-16)] py-[var(--space-6)] bg-[var(--signal-red-500)] text-white font-[900] rounded-xl hover:bg-white hover:text-[var(--carbon-black)] transition-all shadow-glow-red uppercase tracking-[0.2em] text-[11px]"
+                                        onClick={() => {
+                                            const contactSection = document.getElementById('contact');
+                                            if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+                                        }}
+                                    >
+                                        Initiate Deployment
+                                        <ArrowRight className="w-5 h-5 ml-4" />
+                                    </MagneticButton>
+
+                                    <button className="inline-flex items-center px-[var(--space-12)] py-[var(--space-6)] bg-white/5 backdrop-blur-md border border-white/10 text-white font-[700] rounded-xl hover:bg-white/10 spring-scale uppercase tracking-[0.2em] text-[11px]">
+                                        View Asset Registry
+                                    </button>
+                                </motion.div>
+                            </div>
+                        </div>
+
+                        {/* RIGHT COLUMN: HUD ASSET */}
+                        <div className="hidden lg:block lg:col-span-4 relative z-30">
+                            <motion.div
+                                initial={{ opacity: 0, x: 60, scale: 0.9 }}
+                                animate={{ opacity: 1, x: 0, scale: 1 }}
+                                transition={{ duration: 1.2, delay: 0.4 }}
+                                className="bg-white/[0.03] backdrop-blur-2xl border border-white/10 p-[var(--space-12)] rounded-hud shadow-2xl relative overflow-hidden group"
+                            >
+                                <div className="flex items-center justify-between mb-[var(--space-10)]">
+                                    <div className="flex items-center space-x-[var(--space-3)]">
+                                        <div className="w-2 h-2 bg-[var(--signal-red-500)] rounded-full animate-pulse" />
+                                        <span className="text-tech-label text-white/40">SYSTEM STATUS</span>
+                                    </div>
+                                    <span className="text-tech-label text-[var(--signal-red-500)] font-black">NOMINAL</span>
+                                </div>
+
+                                <div className="space-y-[var(--space-3)] mb-[var(--space-12)]">
+                                    <h3 className="text-h3 font-display font-bold text-white uppercase tracking-tighter leading-none">
+                                        High-Precision<br />Engineered
+                                    </h3>
+                                    <p className="text-tech-label text-white/30 tracking-[0.2em]">API SERIES 16A/6A</p>
+                                </div>
+
+                                <div className="space-y-[var(--space-8)]">
+                                    {[
+                                        { label: 'Integrity Index', value: '100%' },
+                                        { label: 'Deploy Readiness', value: '24/7' },
+                                        { label: 'Global Node', value: 'Dubai/DMCC' }
+                                    ].map((stat, i) => (
+                                        <div key={i} className="space-y-[var(--space-2)]">
+                                            <div className="flex justify-between items-center text-tech-label text-white/40">
+                                                <span>{stat.label}</span>
+                                                <span className="text-white font-bold">{stat.value}</span>
+                                            </div>
+                                            <div className="h-[2px] w-full bg-white/5 rounded-full overflow-hidden">
+                                                <motion.div
+                                                    initial={{ width: 0 }}
+                                                    whileInView={{ width: '100%' }}
+                                                    transition={{ duration: 2, delay: 1 + (i * 0.2) }}
+                                                    className="h-full bg-[var(--signal-red-500)] shadow-[0_0_10px_var(--signal-red-500)]"
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* HUD DECORATORS */}
+                                <div className="absolute top-0 right-0 p-[var(--space-6)] opacity-20">
+                                    <div className="w-16 h-16 border-t-[1px] border-r-[1px] border-white/40" />
+                                </div>
+                                <div className="absolute bottom-0 left-0 p-[var(--space-6)] opacity-20">
+                                    <div className="w-16 h-16 border-b-[1px] border-l-[1px] border-white/40" />
+                                </div>
+                            </motion.div>
+                        </div>
+
+                    </div>
+                </motion.div>
+
+                {/* SURFACE TRANSITION MASK */}
+                <div className="absolute bottom-0 left-0 w-full h-[var(--space-48)] bg-gradient-to-t from-[var(--carbon-black)] to-transparent z-15" />
+            </section>
+        </Spotlight>
     );
 }

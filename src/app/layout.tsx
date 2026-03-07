@@ -1,35 +1,36 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter, Playfair_Display, Cormorant_Garamond, Geist_Mono } from "next/font/google";
-import FloatingIslandCTA from "@/components/FloatingIslandCTA";
+import { Inter, Plus_Jakarta_Sans, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import ScrollProgress from "@/components/ScrollProgress";
+import SmartStickyCTA from "@/components/SmartStickyCTA";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["700", "800"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
+  weight: ["400", "700"],
   style: ["italic", "normal"],
+  display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["italic", "normal"],
-});
-
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -45,10 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${inter.variable} ${playfair.variable} ${cormorant.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${plusJakarta.variable} ${playfair.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
+        <ScrollProgress />
         {children}
-        <FloatingIslandCTA />
+        <SmartStickyCTA />
       </body>
     </html>
   );
