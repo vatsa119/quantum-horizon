@@ -1,41 +1,43 @@
-import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, Playfair_Display, JetBrains_Mono } from "next/font/google";
-import ScrollProgress from "@/components/ScrollProgress";
-import SmartStickyCTA from "@/components/SmartStickyCTA";
+import type { Metadata, Viewport } from "next";
+import { Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["700", "800"],
-  display: "swap",
-});
+import { Providers } from "@/providers";
+import Navbar from "@/components/layout/Navbar";
+import SmartStickyCTA from "@/components/layout/SmartStickyCTA";
+import Footer from "@/components/layout/Footer";
 
 const playfair = Playfair_Display({
-  variable: "--font-serif",
   subsets: ["latin"],
+  style: ["normal", "italic"],
   weight: ["400", "700"],
-  style: ["italic", "normal"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
+const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Sigma Oilfield | Precision-Driven Oilfield Solutions",
-  description: "Senior Performance Engineered offshore engineering and technical services.",
+  title: "Sigma Oilfield & Industrial Supply FZCO",
+  description: "Precision Engineering. Global Reach. Trusted supply chain partner in the oilfield and industrial sectors.",
+  openGraph: {
+    title: "Sigma Oilfield & Industrial Supply FZCO",
+    description: "Precision Engineering. Global Reach.",
+    url: "https://sigmaoilfield.com",
+    siteName: "Sigma Oilfield",
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -45,11 +47,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${plusJakarta.variable} ${playfair.variable} ${jetbrainsMono.variable} font-sans antialiased`}
-      >
-        <ScrollProgress />
-        {children}
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&f[]=general-sans@700,600,500,400&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`antialiased ${playfair.variable} ${mono.variable}`}>
+        <Navbar />
+        <Providers>
+          <main>{children}</main>
+        </Providers>
+        <Footer />
         <SmartStickyCTA />
       </body>
     </html>

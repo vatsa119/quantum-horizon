@@ -27,7 +27,7 @@ export default function Hero() {
                 >
                     <div className="absolute inset-0 bg-gradient-to-b from-[var(--carbon-black)] via-transparent to-[var(--carbon-black)] z-10" />
                     <Image
-                        src="/offshore-rig.jpg"
+                        src="/Hero-rig.jpg"
                         alt="Offshore Infrastructure"
                         fill
                         className="object-cover grayscale contrast-125 brightness-50"
@@ -50,8 +50,8 @@ export default function Hero() {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-[var(--space-12)] lg:gap-[var(--space-24)] items-center">
 
                         {/* LEFT COLUMN: BRAND HUB */}
-                        <div className="col-span-12 lg:col-span-8 relative z-20">
-                            <div className="max-w-[800px]">
+                        <div className="col-span-12 lg:col-span-7 relative z-20">
+                            <div className="">
                                 {/* OVERLINE TELEMETRY */}
                                 <motion.div
                                     initial={{ opacity: 0, x: -30 }}
@@ -60,7 +60,7 @@ export default function Hero() {
                                     className="flex items-center gap-[var(--space-4)] mb-[var(--space-8)]"
                                 >
                                     <div className="w-[var(--space-12)] h-[2px] bg-[var(--signal-red-500)]" />
-                                    <span className="text-tech-label text-white/80 tracking-[0.2em]">
+                                    <span className="text-tech-label text-white/80">
                                         Global Infrastructure Protocol: Active
                                     </span>
                                 </motion.div>
@@ -70,7 +70,7 @@ export default function Hero() {
                                     initial={{ opacity: 0, y: 60 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                                    className="text-display-2xl font-display font-[800] leading-[0.95] text-white mb-[var(--space-12)] uppercase tracking-[-0.04em]"
+                                    className="text-display-xl leading-[0.95] text-white mb-[var(--space-12)] uppercase tracking-[-0.04em]"
                                 >
                                     <div className="hero-text-mask-container mb-[var(--space-2)] rounded-2xl overflow-hidden">
                                         {!videoFailed && (
@@ -98,7 +98,7 @@ export default function Hero() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.5, duration: 1 }}
-                                    className="text-body-lg lg:text-[22px] text-white/50 mb-[var(--space-16)] max-w-2xl leading-relaxed font-medium"
+                                    className="text-body-lg text-white/50 mb-[var(--space-16)] max-w-2xl leading-relaxed font-medium"
                                 >
                                     Engineering absolute operational stability across the global energy corridor.
                                     Precision hardware for high-stakes infrastructure.
@@ -112,7 +112,7 @@ export default function Hero() {
                                     className="flex flex-wrap gap-[var(--space-6)]"
                                 >
                                     <MagneticButton
-                                        className="inline-flex items-center px-[var(--space-16)] py-[var(--space-6)] bg-[var(--signal-red-500)] text-white font-[900] rounded-xl hover:bg-white hover:text-[var(--carbon-black)] transition-all shadow-glow-red uppercase tracking-[0.2em] text-[11px]"
+                                        className="inline-flex items-center px-[var(--space-16)] py-[var(--space-6)] bg-[var(--signal-red-500)] text-white font-[900] rounded-xl hover:bg-white hover:text-[var(--carbon-black)] transition-all shadow-glow-red uppercase text-tech-label"
                                         onClick={() => {
                                             const contactSection = document.getElementById('contact');
                                             if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -122,7 +122,7 @@ export default function Hero() {
                                         <ArrowRight className="w-5 h-5 ml-4" />
                                     </MagneticButton>
 
-                                    <button className="inline-flex items-center px-[var(--space-12)] py-[var(--space-6)] bg-white/5 backdrop-blur-md border border-white/10 text-white font-[700] rounded-xl hover:bg-white/10 spring-scale uppercase tracking-[0.2em] text-[11px]">
+                                    <button className="inline-flex items-center px-[var(--space-12)] py-[var(--space-6)] bg-white/5 backdrop-blur-md border border-white/10 text-white font-[700] rounded-xl hover:bg-white/10 spring-scale uppercase text-tech-label">
                                         View Asset Registry
                                     </button>
                                 </motion.div>
@@ -130,10 +130,10 @@ export default function Hero() {
                         </div>
 
                         {/* RIGHT COLUMN: HUD ASSET */}
-                        <div className="hidden lg:block lg:col-span-4 relative z-30">
+                        <div className="hidden lg:block lg:col-span-5 relative z-30">
                             <motion.div
-                                initial={{ opacity: 0, x: 60, scale: 0.9 }}
-                                animate={{ opacity: 1, x: 0, scale: 1 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 1.2, delay: 0.4 }}
                                 className="bg-white/[0.03] backdrop-blur-2xl border border-white/10 p-[var(--space-12)] rounded-hud shadow-2xl relative overflow-hidden group"
                             >
@@ -146,17 +146,17 @@ export default function Hero() {
                                 </div>
 
                                 <div className="space-y-[var(--space-3)] mb-[var(--space-12)]">
-                                    <h3 className="text-h3 font-display font-bold text-white uppercase tracking-tighter leading-none">
+                                    <h3 className="text-h3 text-white uppercase tracking-tighter leading-none">
                                         High-Precision<br />Engineered
                                     </h3>
-                                    <p className="text-tech-label text-white/30 tracking-[0.2em]">API SERIES 16A/6A</p>
+                                    <p className="text-tech-label text-white/30">API SERIES 16A/6A</p>
                                 </div>
 
                                 <div className="space-y-[var(--space-8)]">
                                     {[
                                         { label: 'Integrity Index', value: '100%' },
                                         { label: 'Deploy Readiness', value: '24/7' },
-                                        { label: 'Global Node', value: 'Dubai/DMCC' }
+                                        { label: 'Global Node', value: 'Dubai/FZCO' }
                                     ].map((stat, i) => (
                                         <div key={i} className="space-y-[var(--space-2)]">
                                             <div className="flex justify-between items-center text-tech-label text-white/40">

@@ -15,7 +15,7 @@ export default function StatsBar() {
         },
         {
             label: "Global Logistics",
-            value: "DMCC Hub Command",
+            value: "FZCO Hub Command",
             icon: Building2,
             color: "text-[var(--industrial-gold)]",
             bg: "bg-[var(--industrial-gold)]/10"

@@ -62,10 +62,10 @@ export default function SmartStickyCTA() {
                             whileTap={{ scale: 0.98 }}
                             className="bg-[var(--gradient-cta)] text-white px-8 py-4 rounded-[var(--radius-full)] flex items-center space-x-3 shadow-[0_4px_20px_rgba(220,38,38,0.3)] transition-all duration-300"
                             style={{
-                                background: 'linear-gradient(135deg, #dc2626 0%, #ff6b5a 100%)'
+                                background: 'linear-gradient(135deg, var(--signal-red-600) 0%, var(--signal-red-500) 100%)'
                             }}
                         >
-                            <span className="text-sm font-semibold tracking-[0.02em] font-sans">
+                            <span className="text-tech-label text-white">
                                 GET A QUOTE
                             </span>
                             <ArrowRight size={18} className="translate-y-[0.5px]" />

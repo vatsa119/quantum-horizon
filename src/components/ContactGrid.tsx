@@ -44,7 +44,7 @@ export default function ContactGrid() {
                             icon: MapPin,
                             title: "Global HQ",
                             text: "Unit No. I5-PF-97, Gold Tower, Cluster I, JLT, Dubai, UAE.",
-                            sub: "DMCC Authority Hub",
+                            sub: "FZCO Authority Hub",
                             color: "text-[var(--signal-red-500)]",
                             bg: "bg-[var(--signal-red-500)]/5"
                         },

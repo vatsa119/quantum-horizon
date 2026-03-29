@@ -101,8 +101,8 @@ export default function CorporateBento() {
                                 className="max-w-2xl space-y-[var(--space-8)]"
                             >
                                 <span className="inline-flex px-[var(--space-6)] py-[var(--space-2)] bg-[var(--signal-red-500)] text-white text-tech-label rounded-full">Operational Reach</span>
-                                <h4 className="text-display-lg lg:text-[7rem] font-display font-[800] text-white uppercase tracking-tighter leading-[0.85]">
-                                    Global <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/10 italic">Sourcing</span> Network
+                                <h4 className="text-display-xl font-display font-[800] text-white uppercase tracking-tighter leading-[0.85]">
+                                    Global <span className="text-transparent bg-clip-text bg-[var(--gradient-text)] italic">Sourcing</span> Network
                                 </h4>
                                 <p className="text-h3 text-white/40 font-medium tracking-tight uppercase italic">
                                     US / EU / CHINA Corridors

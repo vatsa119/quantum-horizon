@@ -36,7 +36,7 @@ export default function Footer() {
                                     </p>
                                     <div className="pt-[var(--space-4)]">
                                         <span className="text-tech-label block mb-2 text-white/30">Registry ID</span>
-                                        <span className="inline-flex px-3 py-1 bg-[var(--carbon-900)] border border-white/10 text-tech-label text-[var(--signal-red-500)] rounded-md">DMCC-654871</span>
+                                        <span className="inline-flex px-3 py-1 bg-[var(--carbon-900)] border border-white/10 text-tech-label text-[var(--signal-red-500)] rounded-md">FZCO-654871</span>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@ export default function Footer() {
                                 </div>
                             </div>
                             <p className="text-tech-label text-white/20">
-                                © {new Date().getFullYear()} SIGMA OILFIELD & INDUSTRIAL SUPPLY DMCC. ALL RIGHTS RESERVED.
+                                © {new Date().getFullYear()} SIGMA OILFIELD & INDUSTRIAL SUPPLY FZCO. ALL RIGHTS RESERVED.
                             </p>
                         </div>
                     </div>

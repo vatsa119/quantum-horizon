@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function NarrativeBridge() {
     return (
-        <div className="w-full bg-slate-900 py-12 overflow-hidden">
+        <div className="w-full bg-[var(--carbon-black)] py-12 overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -17,9 +17,9 @@ export default function NarrativeBridge() {
                     href="/contact"
                     className="block w-full"
                 >
-                    <div className="relative w-full bg-[#EE3124] py-10 rounded-[2rem] flex items-center justify-center overflow-hidden shadow-[inset_4px_4px_8px_rgba(255,255,255,0.3),_inset_-4px_-4px_8px_rgba(0,0,0,0.3),_0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-500 hover:scale-[1.02] active:scale-95 group">
+                    <div className="relative w-full bg-[var(--signal-red-500)] py-10 rounded-[2rem] flex items-center justify-center overflow-hidden shadow-[inset_4px_4px_8px_rgba(255,255,255,0.3),_inset_-4px_-4px_8px_rgba(0,0,0,0.3),_0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-500 hover:scale-[1.02] active:scale-95 group">
                         <span
-                            className="text-white text-2xl md:text-3xl tracking-[0.1em] text-center px-6 font-serif italic"
+                            className="text-white text-h2 tracking-[0.1em] text-center px-6 italic"
                             style={{ fontFamily: "'Cormorant Garamond', serif" }}
                         >
                             Partner for Industrial Excellence — <span className="font-sans font-black not-italic uppercase">GET A QUOTE</span>

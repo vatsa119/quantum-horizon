@@ -36,7 +36,7 @@ export default function Navbar({ isDark = false }: { isDark?: boolean }) {
     ];
 
     return (
-        <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isDark ? 'header--dark' : ''}`}>
+        <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isDark ? 'header--dark' : ''} z-[1000]`}>
             {/* Top Tier: Utility Row */}
             <div className="hidden md:block w-full border-b border-white/5 py-[var(--space-2)]">
                 <div className="max-w-7xl mx-auto px-[var(--space-8)] flex justify-end items-center space-x-[var(--space-6)]">
@@ -50,7 +50,7 @@ export default function Navbar({ isDark = false }: { isDark?: boolean }) {
                         <div className="h-3 w-[1px] bg-white/10" />
                         <div className="flex items-center space-x-[var(--space-2)] group cursor-pointer">
                             <Mail className="w-3.5 h-3.5 text-[var(--signal-red-500)]" />
-                            <span className="text-tech-label !lowercase text-white/60 group-hover:text-white transition-colors">
+                            <span className="text-tech-label force-lower text-white/60 group-hover:text-white transition-colors">
                                 uma@sigmadxb.com
                             </span>
                         </div>
@@ -86,7 +86,7 @@ export default function Navbar({ isDark = false }: { isDark?: boolean }) {
                                 SIGMA OILFIELD
                             </span>
                             <span className="text-[10px] font-[500] uppercase tracking-[0.2em] text-white/40 branding-text opacity-60">
-                                & Industrial Supply DMCC
+                                & Industrial Supply FZCO
                             </span>
                         </div>
                     </Link>
