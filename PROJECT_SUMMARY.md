@@ -1,4 +1,4 @@
-# Project Summary: Sigma Oilfield & Industrial Supply DMCC
+# Project Summary: Sigma Oilfield & Industrial Supply FZCO
 
 ## 1. Branding & Visual Identity
 - **Primary Color**: Industrial Blue (#0099CC) - *SIGMA branding*
@@ -16,12 +16,12 @@
 
 ## 3. Core Component Library
 - `Navbar.tsx`: Relative, fluid navigation with dual-color branding cluster.
-- `Hero.tsx`: Superimposed rig imagery with gradient overlays and DMCC headline.
+- `Hero.tsx`: Superimposed rig imagery with gradient overlays and FZCO headline.
 - `StatsBar.tsx`: High-tech metric counters for global rig supply and workshop scale.
 - `ProductShowcase.tsx`: Industrial equipment catalog (Mud Pumps, Tubulars, etc.).
 - `CorporateNarrative.tsx`: UAE Facility details (21,000 sqm Jebel Ali workshop).
 - `ContactGrid.tsx`: 3-column contact architecture with pinned branding.
-- `Footer.tsx`: Dual-location authority (Dubai DMCC HQ + Hyderabad MSME Hub).
+- `Footer.tsx`: Dual-location authority (Dubai FZCO HQ + Hyderabad MSME Hub).
 
 ## 4. Key Pages
 - `Home (/)`: Integrated marketing and supply landing page.
@@ -31,4 +31,4 @@
 ## 5. Industrial Compliance
 - **GST**: 36ABFPT4227QIZ0 (India)
 - **MSME**: UDYAM-TS-02-0021894 (India)
-- **DMCC**: JLT Platinum Tower HQ (Dubai)
+- **FZCO**: JLT Platinum Tower HQ (Dubai)

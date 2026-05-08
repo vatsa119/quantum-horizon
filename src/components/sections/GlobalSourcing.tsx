@@ -56,7 +56,6 @@ export default function GlobalSourcing() {
           >
             <motion.div variants={scaleIn} className="stat-pill">42+ Sectors</motion.div>
             <motion.div variants={scaleIn} className="stat-pill">6 Continents</motion.div>
-            <motion.div variants={scaleIn} className="stat-pill">21,000m² Facility</motion.div>
           </motion.div>
 
           <div className="mt-8">

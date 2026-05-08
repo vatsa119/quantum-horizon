@@ -52,7 +52,7 @@ export default function AboutSection01() {
             maxWidth: '480px',
           }}
         >
-          Sigma Oilfield &amp; Industrial Supply DMCC was established to solve a
+          Sigma Oilfield &amp; Industrial Supply FZCO was established to solve a
           precise problem: the gap between certified international manufacturers and
           the operational demands of oilfields across South Asia and the Middle East.
           We source what others cannot, and deliver it with documentation.

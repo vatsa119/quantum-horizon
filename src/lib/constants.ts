@@ -51,7 +51,6 @@ export const SIGMA_STATS: Stat[] = [
   { value: 95,    suffix: '%',  label: 'On-time delivery rate', duration: 2000 },
   { value: 42,    suffix: '+',  label: 'Sectors served',        duration: 1500 },
   { value: 24,    suffix: '/7', label: 'Response availability',  duration: 1000 },
-  { value: 21000, suffix: 'm²', label: 'Jebel Ali workshop',    duration: 2500 },
 ]
 
 export const TICKER_ITEMS: string[] = [
@@ -65,12 +64,10 @@ export const TICKER_ITEMS: string[] = [
   '42 Sectors',
   '95% Delivery Rate',
   'Jebel Ali · Dubai',
-  'Hyderabad · India',
 ]
 
 export const CERTIFICATIONS = [
   { code: 'API',          label: 'API Certified Standards' },
   { code: 'ISO 9001',     label: 'ISO 9001:2015 Quality Management' },
   { code: 'FZCO',         label: 'FZCO Member' },
-  { code: 'MSME',         label: 'MSME Registered India' },
 ]

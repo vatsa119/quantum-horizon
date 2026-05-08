@@ -17,9 +17,13 @@ const scrolledStyles = {
 }
 
 export default function Navbar(_props: NavbarProps) {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolledState, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+
+  const heroPages = ['/', '/products']
+  const hasHero = heroPages.includes(pathname)
+  const isScrolled = hasHero ? isScrolledState : true
 
   useEffect(() => {
     const handleScroll = () => {

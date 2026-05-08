@@ -2,7 +2,7 @@ import ClientsHero from '@/components/sections/ClientsHero'
 import ClientSelector from '@/components/sections/ClientSelector'
 
 export const metadata = {
-  title: 'Clients | Sigma Oilfield & Industrial Supply DMCC',
+  title: 'Clients | Sigma Oilfield & Industrial Supply FZCO',
   description: 'Trusted by leading oil and gas operators across India and the Middle East.',
 }
 

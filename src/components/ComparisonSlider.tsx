@@ -118,7 +118,7 @@ export default function ComparisonSlider({
                     <div className="comparison-handle-line" />
                     <div className="comparison-handle-circle">
                         <svg className="comparison-arrows" viewBox="0 0 24 24">
-                            <path d="M8 5l-5 7 5 7M16 5l5 7-5 7" stroke="currentColor" stroke-width="2" fill="none" />
+                            <path d="M8 5l-5 7 5 7M16 5l5 7-5 7" stroke="currentColor" strokeWidth="2" fill="none" />
                         </svg>
                     </div>
                     <div className="comparison-handle-line" />

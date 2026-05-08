@@ -20,7 +20,7 @@ export default function HeroSection() {
     sigma: useRef<HTMLSpanElement>(null),
     oilfield: useRef<HTMLSpanElement>(null),
     sub: useRef<HTMLSpanElement>(null),
-    dmcc: useRef<HTMLSpanElement>(null),
+    fzco: useRef<HTMLSpanElement>(null),
   }
 
   const [isScrollIndicatorVisible, setScrollIndicatorVisible] = useState(true)
@@ -98,8 +98,8 @@ export default function HeroSection() {
       }
 
       // Step 7 — "FZCO" slides in from right
-      if (wordRefs.dmcc.current) {
-        tl.fromTo(wordRefs.dmcc.current,
+      if (wordRefs.fzco.current) {
+        tl.fromTo(wordRefs.fzco.current,
           { opacity: 0, x: 40 },
           { opacity: 1, x: 0, duration: 0.4, ease: 'power2.out' },
           2.85
@@ -199,7 +199,7 @@ export default function HeroSection() {
             <span ref={wordRefs.sub} className="hero-word-sub uppercase">
               & Industrial Supply
             </span>
-            <span ref={wordRefs.dmcc} className="hero-word-dmcc uppercase">
+            <span ref={wordRefs.fzco} className="hero-word-fzco uppercase">
               FZCO
             </span>
           </div>

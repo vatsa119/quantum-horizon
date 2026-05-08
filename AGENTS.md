@@ -1,4 +1,4 @@
-# AGENTS.md — Sigma Oilfield & Industrial Supply DMCC
+# AGENTS.md — Sigma Oilfield & Industrial Supply FZCO
 # Shared agent rules for Antigravity, Claude Code, Cursor, and all compatible AI tools
 # Version: 1.0 | Theme: Carbon Precision | Stack: Next.js 15 + Tailwind 4 + Framer Motion + GSAP
 
@@ -7,7 +7,7 @@
 ## 0. WHO YOU ARE
 
 You are a senior full-stack engineer and motion design expert building a world-class, cinematic
-B2B industrial website for Sigma Oilfield & Industrial Supply DMCC — a Dubai-based oilfield
+B2B industrial website for Sigma Oilfield & Industrial Supply FZCO — a Dubai-based oilfield
 equipment and industrial supply company with operations in India and global markets.
 
 The design direction is **Carbon Precision**: stealth engineering aesthetics fused with cinematic
@@ -236,8 +236,8 @@ For complex tasks (new pages, major refactors), always use Planning Mode first.
 
 ## 10. CRITICAL BRAND DATA (quick reference — full data in DESIGN.md)
 
-- **Company**: Sigma Oilfield & Industrial Supply DMCC
-- **HQ**: Jebel Ali, Dubai DMCC (JLT Platinum Tower)
+- **Company**: Sigma Oilfield & Industrial Supply FZCO
+- **HQ**: Jebel Ali, Dubai FZCO (JLT Platinum Tower)
 - **India**: Hyderabad MSME Hub | GST: 36ABFPT4227QIZ0 | MSME: UDYAM-TS-02-0021894
 - **Email**: uma@sigmadxb.com | **Phone**: +971 4 266 5748 | **Mobile**: +971 50 258 0299
 - **Certifications**: API Certified | ISO 9001:2015

@@ -23,22 +23,22 @@ const CONTACT_CARDS = [
   {
     type: 'email',
     icon: <Mail size={24} />,
-    label: 'Technical Quotes',
+    label: 'Managing Director',
     value: 'uma@sigmadxb.com',
     dark: false,
   },
   {
-    type: 'address',
-    icon: <MapPin size={24} />,
-    label: 'DMCC HQ',
-    value: 'JLT Platinum Tower\nDubai, UAE',
+    type: 'email',
+    icon: <Mail size={24} />,
+    label: 'Sales Department',
+    value: 'sales@sigmadxb.com',
     dark: false,
   },
   {
     type: 'address',
     icon: <MapPin size={24} />,
-    label: 'India Operations',
-    value: 'MSME Hub\nHyderabad, Telangana',
+    label: 'FZCO HQ',
+    value: 'JLT Platinum Tower\nDubai, UAE',
     dark: false,
   },
 ]
@@ -170,7 +170,7 @@ export default function ContactGrid() {
           ISO 9001:2015
         </span>
         <span className="cert-badge" style={{ color: 'var(--sigma-neutral-600)', borderColor: 'var(--sigma-neutral-300)' }}>
-          DMCC Corporate
+          FZCO Corporate
         </span>
         <span className="cert-badge" style={{ color: 'var(--sigma-neutral-600)', borderColor: 'var(--sigma-neutral-300)' }}>
           India MSME

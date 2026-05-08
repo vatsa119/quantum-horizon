@@ -1,5 +1,5 @@
 # GEMINI.md — Antigravity-Specific Configuration
-# Sigma Oilfield & Industrial Supply DMCC
+# Sigma Oilfield & Industrial Supply FZCO
 # Overrides and extends AGENTS.md. This file takes precedence.
 
 ---
@@ -51,6 +51,10 @@ npm run lint         # ESLint check
 - Book-turn transition: Panel wipe (homepage) + StPageFlip (products) + 3D fold (about)
 - About page: 5 sections (Expertise, Mission, Excellence, Quality, Vision) with fixed right side-nav dots. No GSAP fold on About — Framer Motion whileInView only. GSAP fold reserved for a future polish pass (Prompt 7).
 - Contact page: SmartStickyCTA hidden (pathname === '/contact'). Confirmed in existing component.
+- Globe uses synthetic land mask (Fibonacci lattice + approximate continental outlines) — no external texture dependency. Avoids VRAM overhead.
+- Bloom restricted to markers only via luminanceThreshold: 0.8
+- Keyboard rotation added for ARIA compliance
+- Mobile gate: dpr capped at [1,2] and adaptive LOD reduces point count to 70% when FPS drops below 40
 
 ### Components built (update as you go)
 - [x] LenisProvider
@@ -84,6 +88,9 @@ npm run lint         # ESLint check
 - [x] AboutSideNav (fixed right dot navigation)
 - [x] ContactHero (SYSTEM.UMA status indicator)
 - [x] ContactGrid (5 contact cards + trust badges)
+- [x] SphereH globe (Three.js + R3F, halftone point cloud, Fresnel atmosphere, pulse markers, friction rotation, bloom post-processing, adaptive LOD)
+- [x] /globe demo page (Sigma operational locations)
+- [x] src/types/globe.ts
 
 ---
 

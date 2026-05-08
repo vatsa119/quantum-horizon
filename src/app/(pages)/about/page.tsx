@@ -7,7 +7,7 @@ import AboutSection05 from '@/components/sections/about/AboutSection05'
 import AboutSideNav from '@/components/ui/AboutSideNav'
 
 export const metadata = {
-  title: 'About | Sigma Oilfield & Industrial Supply DMCC',
+  title: 'About | Sigma Oilfield & Industrial Supply FZCO',
   description: 'Precision engineering expertise built on API certification and ISO quality.',
 }
 

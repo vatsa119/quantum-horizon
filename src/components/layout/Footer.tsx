@@ -3,7 +3,7 @@ import { Phone, Smartphone, Mail, Clock, Facebook, Linkedin, Twitter, Instagram 
 
 export default function Footer() {
   return (
-    <footer id="main-footer" className="footer">
+    <footer id="main-footer" className="footer" style={{ position: 'relative' }}>
       <div className="footer-gradient-border" />
       
       <div className="footer-grid">
@@ -14,27 +14,18 @@ export default function Footer() {
               SIGMA
             </h2>
             <div style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 600, fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--sigma-neutral-400)', lineHeight: 1 }}>
-              OILFIELD
+              FZCO
             </div>
             <div style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 400, fontSize: '12px', color: 'rgba(255,255,255,0.35)', marginTop: '2px' }}>
-              & Industrial Supply DMCC
+              & Industrial Supply
             </div>
           </div>
 
           <div style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 400, fontSize: '13px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <p>
-              Jebel Ali, Dubai DMCC<br />
-              JLT Platinum Tower, UAE
+              JLT Platinum Tower<br />
+              Jebel Ali, Dubai, UAE
             </p>
-            <p>
-              Hyderabad MSME Hub<br />
-              Telangana, India
-            </p>
-          </div>
-
-          <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '24px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span>GST: 36ABFPT4227QIZ0</span>
-            <span>MSME: UDYAM-TS-02-0021894</span>
           </div>
         </div>
 
@@ -68,7 +59,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-1 mt-1">
               <span style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 500, fontSize: '14px', color: 'white', lineHeight: 1 }}>uma@sigmadxb.com</span>
-              <span style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 400, fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>Procurement Lead</span>
+              <span style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 400, fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>Managing Director</span>
             </div>
           </div>
 
@@ -77,8 +68,8 @@ export default function Footer() {
               <Mail size={14} color="var(--sigma-red-500)" />
             </div>
             <div className="flex flex-col gap-1 mt-1">
-              <span style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 500, fontSize: '14px', color: 'white', lineHeight: 1 }}>support@sigmadxb.com</span>
-              <span style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 400, fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>Technical Support</span>
+              <span style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 500, fontSize: '14px', color: 'white', lineHeight: 1 }}>sales@sigmadxb.com</span>
+              <span style={{ fontFamily: 'General Sans, sans-serif', fontWeight: 400, fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>Sales Department</span>
             </div>
           </div>
 
@@ -122,10 +113,10 @@ export default function Footer() {
         <div className="flex flex-wrap gap-2">
           <span className="cert-badge">API Certified</span>
           <span className="cert-badge">ISO 9001:2015</span>
-          <span className="cert-badge">DMCC Member</span>
+          <span className="cert-badge">FZCO Member</span>
         </div>
         <div style={{ fontFamily: 'General Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.3)' }}>
-          &copy; 2026 Sigma Oilfield & Industrial Supply DMCC
+          &copy; 2026 Sigma Oilfield & Industrial Supply FZCO
         </div>
       </div>
     </footer>

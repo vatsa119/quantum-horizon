@@ -30,8 +30,7 @@ export default function CorporateNarrative() {
 
           <p className="corporate-body text-[var(--sigma-neutral-600)]">
             Sigma Oilfield & Industrial Supply FZCO operates at the intersection of technical
-            expertise and global supply chain mastery. From our Jebel Ali workshop to oilfields
-            across India and the Middle East, we deliver what others cannot.
+            expertise and global supply chain mastery.
           </p>
 
           <div>
@@ -88,7 +87,6 @@ export default function CorporateNarrative() {
                 <div>
                   <h3 className="feature-title">Inventory Integrity</h3>
                   <p className="feature-desc">
-                    21,000m² Jebel Ali facility with real-time stock management across 6 product sectors.
                   </p>
                 </div>
               </motion.div>

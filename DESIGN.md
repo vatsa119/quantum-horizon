@@ -97,7 +97,7 @@ precision is the baseline, not the aspiration.
 
 ### Company Identity
 ```
-Full name:     Sigma Oilfield & Industrial Supply DMCC
+Full name:     Sigma Oilfield & Industrial Supply FZCO
 Short name:    Sigma Oilfield
 Tagline:       Precision Engineering. Global Reach.
 Domain:        sigmaoilfield.com (or current domain)
@@ -114,7 +114,7 @@ Address (India):       Hyderabad MSME Hub, Telangana, India
 
 ### Registrations
 ```
-DMCC:   (Dubai DMCC registration — confirm number)
+FZCO:   (Dubai FZCO registration — confirm number)
 GST:    36ABFPT4227QIZ0  (India)
 MSME:   UDYAM-TS-02-0021894  (India)
 ```
@@ -300,13 +300,13 @@ The hero is a 100vh pinned section. It runs a GSAP timeline on load.
 5. `t=2.3s`: "SIGMA" slams in — perspective scale from (scale:0.7, opacity:0) to (scale:1, opacity:1), 0.4s
 6. `t=2.5s`: "OILFIELD" hits — same treatment, 0.15s after SIGMA
 7. `t=2.65s`: "& INDUSTRIAL SUPPLY" sweeps in, slightly slower
-8. `t=3.0s`: "DMCC" slides in from right
+8. `t=3.0s`: "FZCO" slides in from right
 9. `t=3.3s`: CTA button appears with spring bounce. Border beam starts.
 10. `t=3.5s`: Scroll indicator animates in at bottom
 
 **Ticker strip content** (fast-scrolling, grayscale logos or text):
 ```
-ONGC · OIL INDIA LIMITED · GUJARAT NATURAL RESOURCES · SGD · API CERTIFIED · ISO 9001:2015 · DMCC MEMBER · 42 SECTORS · 95% DELIVERY RATE
+ONGC · OIL INDIA LIMITED · GUJARAT NATURAL RESOURCES · SGD · API CERTIFIED · ISO 9001:2015 · FZCO MEMBER · 42 SECTORS · 95% DELIVERY RATE
 ```
 
 **Background**: Full-bleed oil rig photograph. Dark overlay: `rgba(10,15,24,0.65)`.

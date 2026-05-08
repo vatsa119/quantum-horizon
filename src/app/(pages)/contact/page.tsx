@@ -2,7 +2,7 @@ import ContactHero from '@/components/sections/ContactHero'
 import ContactGrid from '@/components/sections/ContactGrid'
 
 export const metadata = {
-  title: 'Contact | Sigma Oilfield & Industrial Supply DMCC',
+  title: 'Contact | Sigma Oilfield & Industrial Supply FZCO',
   description: 'Reach our procurement specialists in Dubai and India.',
 }
 
